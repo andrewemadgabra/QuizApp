@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Quiz App</string>
+    <string name="quiz">QUIZ</string>
+    <string name="question1">1) Sarita goes to office at 10 am daily.</string>
+    <string name="answer1">a.Present Tense</string>
+    <string name="answer2">b.Past Tense</string>
+    <string name="answer3">c.Future Tense</string>
+    <string name="answer4">d.Past Perfect</string>
+    <string name="question2">2) Tejpal and his friends have been playing chess for two hours.</string>
+    <string name="question3">3) They will have been playing cricket for two hours.</string>
+    <string name="question4">4) They have been residing here for four years.</string>
+    <string name="answer5">a.Past Tense</string>
+    <string name="answer6">b.Present Tense</string>
+    <string name="answer7">c.Past Perfect</string>
 </resources>
