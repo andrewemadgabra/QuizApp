@@ -61,16 +61,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Submit(View view) {
-        CharSequence resultsDisplay;
+        String Display;
         questionTWO(view);
         questionTHREE(view);
         final_grade = score1+score2+score3+score4;
         if (final_grade == 10) {
-            resultsDisplay = "Perfect! You scored 4 out of 4";
+            Display = "Perfect! You scored 4 out of 4";
         } else {
-            resultsDisplay = "Try again. You scored " + final_grade + " out of 4";
+            Display = "Try again. You scored " + final_grade + " out of 4";
         }
-        Toast.makeText(getApplicationContext(), "Your Result : " + resultsDisplay, Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "Your Result : " + Display, Toast.LENGTH_LONG).show();
         EditText clear = (EditText) findViewById(R.id.et_answer_question3);
         clear.setText("");
         EditText delete = (EditText) findViewById(R.id.et_answer_question2);
