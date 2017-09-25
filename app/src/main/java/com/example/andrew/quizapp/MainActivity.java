@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
             Display = "Perfect! You scored 4 out of 4";
         } else {
             Display = "Try again. You scored " + final_grade + " out of 4";
+            final_grade = 0 ;
         }
         Toast.makeText(getApplicationContext(), "Your Result : " + Display, Toast.LENGTH_LONG).show();
         EditText clear = (EditText) findViewById(R.id.et_answer_question3);
