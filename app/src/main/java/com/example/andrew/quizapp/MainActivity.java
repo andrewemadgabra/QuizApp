@@ -8,24 +8,25 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
+import android.widget.RadioGroup;
 
 public class MainActivity extends AppCompatActivity {
-    int score1,score2,score3,score4,final_grade ;
+    int final_grade = 0,score1=0,score2=0,score3=0,score4=0;
+    RadioGroup mRadioGroup;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-
     public void selectitem(View view) {
         CheckBox checkA = (CheckBox) findViewById(R.id.cb_answer_question1a);
         CheckBox checkB = (CheckBox) findViewById(R.id.cb_answer_question1b);
         CheckBox checkC = (CheckBox) findViewById(R.id.cb_answer_question1c);
         CheckBox checkD = (CheckBox) findViewById(R.id.cb_answer_question1d);
         if (checkA.isChecked() && checkB.isChecked() && !checkC.isChecked() && !checkD.isChecked()) {
-            score1 += 1;
+            final_grade += 1;
         } else {
-            score1 = 0;
+            return;
         }
     }
 
@@ -34,9 +35,9 @@ public class MainActivity extends AppCompatActivity {
         String value = text.getText().toString();
         String result = "Past Tense";
         if (value.equals(result)) {
-            score2 += 1;
+            final_grade += 1;
         } else {
-            score2 = 0;
+            return;
         }
     }
 
@@ -45,36 +46,45 @@ public class MainActivity extends AppCompatActivity {
         String value1 = textt.getText().toString();
         String result = "Future Tense";
         if (value1.equals(result)) {
-            score3 += 1;
+            final_grade += 1;
         } else {
-            score3 = 0;
+            return;
         }
     }
-
     public void onRadioButtonClicked(View view) {
         RadioButton right = (RadioButton) findViewById(R.id.rb_answer_question4b);
         if (right.isChecked()) {
-            score4 += 1;
+            final_grade += 1;
         } else {
-            score4 = 0;
+            return;
         }
     }
-
     public void Submit(View view) {
         String Display;
         questionTWO(view);
         questionTHREE(view);
-        final_grade = score1+score2+score3+score4;
-        if (final_grade == 10) {
-            Display = "Perfect! You scored 4 out of 4";
-        } else {
+        if (final_grade < 4) {
             Display = "Try again. You scored " + final_grade + " out of 4";
-            final_grade = 0 ;
+            Toast.makeText(getApplicationContext(), "Your Result : " + Display, Toast.LENGTH_LONG).show();
+            final_grade=0;
+        } else if(final_grade==4) {
+            Display = "You scored " + final_grade + " out of 4";
+            Toast.makeText(getApplicationContext(), "Your Result : " + Display, Toast.LENGTH_LONG).show();
+            final_grade=0;
         }
-        Toast.makeText(getApplicationContext(), "Your Result : " + Display, Toast.LENGTH_LONG).show();
+        CheckBox checkA = (CheckBox) findViewById(R.id.cb_answer_question1a);
+        CheckBox checkB = (CheckBox) findViewById(R.id.cb_answer_question1b);
+        CheckBox checkC = (CheckBox) findViewById(R.id.cb_answer_question1c);
+        CheckBox checkD = (CheckBox) findViewById(R.id.cb_answer_question1d);
+        checkA.setChecked(false);
+        checkB.setChecked(false);
+        checkC.setChecked(false);
+        checkD.setChecked(false);
         EditText clear = (EditText) findViewById(R.id.et_answer_question3);
         clear.setText("");
         EditText delete = (EditText) findViewById(R.id.et_answer_question2);
         delete.setText("");
+        mRadioGroup = (RadioGroup) findViewById(R.id.radiogroup1);
+        mRadioGroup.clearCheck();
     }
 }
