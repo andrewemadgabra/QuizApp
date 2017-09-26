@@ -11,7 +11,7 @@ import android.widget.Toast;
 import android.widget.RadioGroup;
 
 public class MainActivity extends AppCompatActivity {
-    int final_grade = 0,score1=0,score2=0,score3=0,score4=0;
+    int final_grade = 0;
     RadioGroup mRadioGroup;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
