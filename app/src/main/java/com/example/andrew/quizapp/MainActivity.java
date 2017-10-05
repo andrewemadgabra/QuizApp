@@ -41,10 +41,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void questionTHREE(View view) {
         EditText textt = (EditText) findViewById(R.id.et_answer_question3);
-        String value1 = textt.getText().toString();
+        String value = textt.getText().toString();
         String resultone = "Future Tense";
 	String resulttwo = "future tense";
-        if (value1.equals(resultone)||value1.equals(resulttwo)) {
+        if (value.equals(resultone)||value.equals(resulttwo)) {
             final_grade += 1;
         }
     }
