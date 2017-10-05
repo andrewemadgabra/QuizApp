@@ -12,10 +12,12 @@
 
         <TextView
             style="@style/Texttest"
+            android:id="@+id/quiz"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/quiz" />
+            android:text="@string/quiz"
+            android:textSize="25sp"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -24,6 +26,7 @@
 
             <TextView
                 style="@style/Texttest"
+                android:id="@+id/textView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingBottom="20dp"
@@ -62,6 +65,7 @@
                 android:text="@string/answer4" />
 
             <TextView
+                android:id="@+id/textView2"
                 style="@style/Texttest"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -78,6 +82,7 @@
                 android:paddingBottom="20dp" />
 
             <TextView
+                android:id="@+id/textView3"
                 style="@style/Texttest"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -94,6 +99,7 @@
                 android:paddingBottom="20dp" />
 
             <TextView
+                android:id="@+id/textView4"
                 style="@style/Texttest"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -101,10 +107,10 @@
                 android:paddingTop="20dp"
                 android:text="@string/question4" />
 
-            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            <RadioGroup
+                android:id="@+id/radiogroup1"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/radiogroup1"
                 android:orientation="vertical">
 
                 <RadioButton
@@ -133,9 +139,8 @@
 
         <Button
             android:id="@+id/submit_button"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:onClick="Submit"
             android:text="Submit" />
 
