@@ -19,76 +19,59 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void selectitem(View view) {
+    public void questionOne(View view) {
         CheckBox checkA = (CheckBox) findViewById(R.id.cb_answer_question1a);
         CheckBox checkB = (CheckBox) findViewById(R.id.cb_answer_question1b);
         CheckBox checkC = (CheckBox) findViewById(R.id.cb_answer_question1c);
         CheckBox checkD = (CheckBox) findViewById(R.id.cb_answer_question1d);
         if (checkA.isChecked() && checkB.isChecked() && !checkC.isChecked() && !checkD.isChecked()) {
-            final_grade += 1;
+            final_grade++;
+        } else {
+            return;
         }
     }
 
     public void questionTWO(View view) {
         EditText text = (EditText) findViewById(R.id.et_answer_question2);
-        String value = text.getText().toString();
-        String resultone = "Past Tense";
-	String resulttwo = "past tense";
-        if (value.equals(resultone)||value.equals(resulttwo)) {
-            final_grade += 1;
+        boolean value = text.getText().toString().trim().equalsIgnoreCase("Past Tense");
+        if (value) {
+            final_grade++;
+        } else {
+            return;
         }
     }
 
     public void questionTHREE(View view) {
         EditText textt = (EditText) findViewById(R.id.et_answer_question3);
-        String value = textt.getText().toString();
-        String resultone = "Future Tense";
-	String resulttwo = "future tense";
-        if (value.equals(resultone)||value.equals(resulttwo)) {
-            final_grade += 1;
+        boolean value = textt.getText().toString().trim().equalsIgnoreCase("Future Tense");
+        if (value) {
+            final_grade++;
+        } else {
+            return;
         }
     }
 
-    public void onRadioButtonClicked(View view) {
+    public void questionFour(View view) {
         RadioButton answer1 = (RadioButton) findViewById(R.id.rb_answer_question4a);
         RadioButton answer2 = (RadioButton) findViewById(R.id.rb_answer_question4b);
         RadioButton answer3 = (RadioButton) findViewById(R.id.rb_answer_question4c);
         Boolean answer;
-        answer=answer2.isChecked();
+        answer = answer2.isChecked();
         if (answer) {
-            final_grade += 1;
+            final_grade++;
+        } else {
+            return;
         }
-
     }
 
     public void Submit(View view) {
         String Display;
+        questionOne(view);
         questionTWO(view);
         questionTHREE(view);
-        if (final_grade < 4) {
-            Display = "Try again. You scored " + final_grade + " out of 4";
-            Toast.makeText(getApplicationContext(), "Your Result : " + Display, Toast.LENGTH_SHORT).show();
-            final_grade = 0;
-        } else if (final_grade == 4) {
-            Display = "You scored " + final_grade + " out of 4";
-            Toast.makeText(getApplicationContext(), "Your Result : " + Display, Toast.LENGTH_SHORT).show();
-            final_grade = 0;
-        } else {
-            final_grade = 0;
-        }
-        CheckBox checkA = (CheckBox) findViewById(R.id.cb_answer_question1a);
-        CheckBox checkB = (CheckBox) findViewById(R.id.cb_answer_question1b);
-        CheckBox checkC = (CheckBox) findViewById(R.id.cb_answer_question1c);
-        CheckBox checkD = (CheckBox) findViewById(R.id.cb_answer_question1d);
-        checkA.setChecked(false);
-        checkB.setChecked(false);
-        checkC.setChecked(false);
-        checkD.setChecked(false);
-        EditText clear = (EditText) findViewById(R.id.et_answer_question3);
-        clear.setText("");
-        EditText delete = (EditText) findViewById(R.id.et_answer_question2);
-        delete.setText("");
-        mRadioGroup = (RadioGroup) findViewById(R.id.radiogroup1);
-        mRadioGroup.clearCheck();
+        questionFour(view);
+        Display = "You Scored " + final_grade + " out of 4";
+        Toast.makeText(getApplicationContext(), "Your Result : " + Display, Toast.LENGTH_SHORT).show();
+        final_grade = 0;
     }
 }

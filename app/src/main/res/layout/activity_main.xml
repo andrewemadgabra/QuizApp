@@ -11,13 +11,13 @@
         android:orientation="vertical">
 
         <TextView
-            style="@style/Texttest"
             android:id="@+id/quiz"
+            style="@style/Texttest"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/quiz"
-            android:textSize="25sp"/>
+            android:textSize="25sp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -25,8 +25,8 @@
             android:orientation="vertical">
 
             <TextView
-                style="@style/Texttest"
                 android:id="@+id/textView1"
+                style="@style/Texttest"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingBottom="20dp"
@@ -37,7 +37,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:onClick="selectitem"
                 android:text="@string/answer1" />
 
             <CheckBox
@@ -45,7 +44,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:onClick="selectitem"
                 android:text="@string/answer2" />
 
             <CheckBox
@@ -53,7 +51,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:onClick="selectitem"
                 android:text="@string/answer3" />
 
             <CheckBox
@@ -61,7 +58,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:onClick="selectitem"
                 android:text="@string/answer4" />
 
             <TextView
@@ -117,21 +113,18 @@
                     android:id="@+id/rb_answer_question4a"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="onRadioButtonClicked"
                     android:text="@string/answer5" />
 
                 <RadioButton
                     android:id="@+id/rb_answer_question4b"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="onRadioButtonClicked"
                     android:text="@string/answer6" />
 
                 <RadioButton
                     android:id="@+id/rb_answer_question4c"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="onRadioButtonClicked"
                     android:text="@string/answer7" />
             </RadioGroup>
 
@@ -143,7 +136,5 @@
             android:layout_height="wrap_content"
             android:onClick="Submit"
             android:text="Submit" />
-
     </LinearLayout>
-
 </ScrollView>
